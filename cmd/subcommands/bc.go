@@ -7,11 +7,11 @@ import (
 	"time"
 
 	"github.com/fatih/structs"
+	"github.com/langsen111/go-tron-sdk/pkg/address"
+	"github.com/langsen111/go-tron-sdk/pkg/common"
+	"github.com/langsen111/go-tron-sdk/pkg/proto/core"
 	"github.com/spf13/cobra"
 	"google.golang.org/protobuf/reflect/protoreflect"
-	"gotron-sdk/pkg/address"
-	"gotron-sdk/pkg/common"
-	"gotron-sdk/pkg/proto/core"
 )
 
 var ()

@@ -29,8 +29,8 @@ import (
 	"time"
 
 	mapset "github.com/deckarep/golang-set"
+	"github.com/langsen111/go-tron-sdk/pkg/address"
 	"go.uber.org/zap"
-	"gotron-sdk/pkg/address"
 )
 
 // Minimum amount of time between cache reloads. This limit applies if the platform does

@@ -1,4 +1,4 @@
-module gotron-sdk
+module github.com/langsen111/go-tron-sdk
 
 go 1.19
 

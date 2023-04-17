@@ -7,9 +7,9 @@ import (
 
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/crypto/secp256k1"
-	"gotron-sdk/pkg/address"
-	"gotron-sdk/pkg/common"
-	"gotron-sdk/pkg/proto/core"
+	"github.com/langsen111/go-tron-sdk/pkg/address"
+	"github.com/langsen111/go-tron-sdk/pkg/common"
+	"github.com/langsen111/go-tron-sdk/pkg/proto/core"
 )
 
 type DerivationPath []uint32

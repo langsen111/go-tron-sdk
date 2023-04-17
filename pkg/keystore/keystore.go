@@ -35,9 +35,9 @@ import (
 
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/event"
+	"github.com/langsen111/go-tron-sdk/pkg/address"
+	"github.com/langsen111/go-tron-sdk/pkg/proto/core"
 	"google.golang.org/protobuf/proto"
-	"gotron-sdk/pkg/address"
-	"gotron-sdk/pkg/proto/core"
 )
 
 // ErrLocked ...

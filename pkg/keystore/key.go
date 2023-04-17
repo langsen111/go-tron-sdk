@@ -30,8 +30,8 @@ import (
 	"time"
 
 	"github.com/ethereum/go-ethereum/crypto"
+	"github.com/langsen111/go-tron-sdk/pkg/address"
 	"github.com/pborman/uuid"
-	"gotron-sdk/pkg/address"
 )
 
 const (

@@ -6,14 +6,14 @@ import (
 	"math/big"
 	"testing"
 
+	"github.com/langsen111/go-tron-sdk/pkg/abi"
+	"github.com/langsen111/go-tron-sdk/pkg/client"
+	"github.com/langsen111/go-tron-sdk/pkg/proto/api"
+	"github.com/langsen111/go-tron-sdk/pkg/proto/core"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"google.golang.org/grpc"
 	"google.golang.org/protobuf/proto"
-	"gotron-sdk/pkg/abi"
-	"gotron-sdk/pkg/client"
-	"gotron-sdk/pkg/proto/api"
-	"gotron-sdk/pkg/proto/core"
 )
 
 func TestProtoParse(t *testing.T) {

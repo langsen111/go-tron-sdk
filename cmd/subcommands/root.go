@@ -13,17 +13,17 @@ import (
 	"time"
 
 	color "github.com/fatih/color"
+	"github.com/langsen111/go-tron-sdk/pkg/client"
+	"github.com/langsen111/go-tron-sdk/pkg/client/transaction"
+	"github.com/langsen111/go-tron-sdk/pkg/common"
+	c "github.com/langsen111/go-tron-sdk/pkg/common"
+	"github.com/langsen111/go-tron-sdk/pkg/store"
 	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
 	"github.com/spf13/cobra/doc"
 	"golang.org/x/crypto/ssh/terminal"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
-	"gotron-sdk/pkg/client"
-	"gotron-sdk/pkg/client/transaction"
-	"gotron-sdk/pkg/common"
-	c "gotron-sdk/pkg/common"
-	"gotron-sdk/pkg/store"
 )
 
 var (
@@ -150,8 +150,8 @@ func init() {
 var (
 	// VersionWrapDump meant to be set from main.go
 	VersionWrapDump = ""
-	versionLink     = "https://api.github.com/repos/langsen111/gotron-sdk/releases/latest"
-	versionTagLink  = "https://api.github.com/repos/langsen111/gotron-sdk/git/ref/tags/"
+	versionLink     = "https://api.github.com/repos/langsen111/github.com/langsen111/go-tron-sdk/releases/latest"
+	versionTagLink  = "https://api.github.com/repos/langsen111/github.com/langsen111/go-tron-sdk/git/ref/tags/"
 	versionFormat   = regexp.MustCompile("v[0-9]+-[a-z0-9]{7}")
 )
 

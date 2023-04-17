@@ -5,9 +5,9 @@ import (
 	"os"
 	"path"
 
+	"github.com/langsen111/go-tron-sdk/pkg/common"
+	"github.com/langsen111/go-tron-sdk/pkg/store"
 	"github.com/mitchellh/go-homedir"
-	"gotron-sdk/pkg/common"
-	"gotron-sdk/pkg/store"
 )
 
 // RemoveAccount - removes an account from the keystore

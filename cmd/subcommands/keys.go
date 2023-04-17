@@ -6,14 +6,14 @@ import (
 	"os"
 
 	"github.com/fatih/color"
-	"gotron-sdk/pkg/account"
-	c "gotron-sdk/pkg/common"
+	"github.com/langsen111/go-tron-sdk/pkg/account"
+	c "github.com/langsen111/go-tron-sdk/pkg/common"
 
+	"github.com/langsen111/go-tron-sdk/pkg/ledger"
+	"github.com/langsen111/go-tron-sdk/pkg/mnemonic"
+	"github.com/langsen111/go-tron-sdk/pkg/store"
 	"github.com/spf13/cobra"
 	"github.com/tyler-smith/go-bip39"
-	"gotron-sdk/pkg/ledger"
-	"gotron-sdk/pkg/mnemonic"
-	"gotron-sdk/pkg/store"
 )
 
 const (

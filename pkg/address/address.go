@@ -7,7 +7,7 @@ import (
 	"math/big"
 
 	"github.com/ethereum/go-ethereum/crypto"
-	"gotron-sdk/pkg/common"
+	"github.com/langsen111/go-tron-sdk/pkg/common"
 )
 
 const (

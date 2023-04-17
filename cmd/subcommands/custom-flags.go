@@ -1,8 +1,8 @@
 package cmd
 
 import (
+	"github.com/langsen111/go-tron-sdk/pkg/address"
 	"github.com/pkg/errors"
-	"gotron-sdk/pkg/address"
 )
 
 type tronAddress struct {

@@ -4,11 +4,11 @@ import (
 	"bytes"
 	"fmt"
 
+	"github.com/langsen111/go-tron-sdk/pkg/common"
+	"github.com/langsen111/go-tron-sdk/pkg/proto/api"
+	"github.com/langsen111/go-tron-sdk/pkg/proto/core"
 	"go.uber.org/zap"
 	"google.golang.org/protobuf/proto"
-	"gotron-sdk/pkg/common"
-	"gotron-sdk/pkg/proto/api"
-	"gotron-sdk/pkg/proto/core"
 )
 
 // ListNodes provides list of network nodes

@@ -3,8 +3,8 @@ package common_test
 import (
 	"testing"
 
+	"github.com/langsen111/go-tron-sdk/pkg/common"
 	"github.com/stretchr/testify/assert"
-	"gotron-sdk/pkg/common"
 )
 
 func Test_DecodeBase58(t *testing.T) {

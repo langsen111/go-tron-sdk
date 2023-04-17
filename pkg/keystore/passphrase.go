@@ -40,10 +40,10 @@ import (
 
 	"github.com/ethereum/go-ethereum/common/math"
 	"github.com/ethereum/go-ethereum/crypto"
+	"github.com/langsen111/go-tron-sdk/pkg/address"
 	"github.com/pborman/uuid"
 	"golang.org/x/crypto/pbkdf2"
 	"golang.org/x/crypto/scrypt"
-	"gotron-sdk/pkg/address"
 )
 
 const (

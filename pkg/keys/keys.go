@@ -6,8 +6,8 @@ import (
 	"path"
 	"strings"
 
-	"gotron-sdk/pkg/address"
-	"gotron-sdk/pkg/keystore"
+	"github.com/langsen111/go-tron-sdk/pkg/address"
+	"github.com/langsen111/go-tron-sdk/pkg/keystore"
 
 	// "github.com/ethereum/go-ethereum/crypto"
 

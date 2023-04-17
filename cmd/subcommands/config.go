@@ -8,9 +8,9 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/langsen111/go-tron-sdk/pkg/common"
 	"github.com/spf13/cobra"
 	"gopkg.in/yaml.v2"
-	"gotron-sdk/pkg/common"
 )
 
 func init() {

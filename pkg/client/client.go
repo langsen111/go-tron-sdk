@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/langsen111/go-tron-sdk/pkg/proto/api"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/metadata"
-	"gotron-sdk/pkg/proto/api"
 )
 
 // GrpcClient controller structure
