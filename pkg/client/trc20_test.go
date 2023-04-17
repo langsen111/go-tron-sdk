@@ -21,3 +21,18 @@ func TestTRC20_Balance(t *testing.T) {
 	assert.Nil(t, err)
 	assert.Greater(t, balance.Int64(), int64(0))
 }
+
+func TestGrpcClient_TRC20ContractAllowance(t *testing.T) {
+	trc20Contract := "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t" // USDT
+	address := "TDjfwCF8EcUph49MQj9u3fuNePMDELfAZr"
+	spender := "TKcEU8ekq2ZoFzLSGFYCUY6aocJBX9X31b"
+
+	conn := client.NewGrpcClient("grpc.trongrid.io:50051")
+	err := conn.Start(grpc.WithInsecure())
+	require.Nil(t, err)
+
+	allowance, err := conn.TRC20ContractAllowance(address, spender, trc20Contract)
+	println(allowance.String())
+	assert.Nil(t, err)
+	assert.Greater(t, allowance.Int64(), int64(0))
+}
