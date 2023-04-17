@@ -6,10 +6,10 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/fbsobreira/gotron-sdk/pkg/common"
-	"github.com/fbsobreira/gotron-sdk/pkg/proto/api"
-	"github.com/fbsobreira/gotron-sdk/pkg/proto/core"
 	"google.golang.org/protobuf/proto"
+	"gotron-sdk/pkg/common"
+	"gotron-sdk/pkg/proto/api"
+	"gotron-sdk/pkg/proto/core"
 )
 
 // GetAssetIssueByAccount list asset issued by account

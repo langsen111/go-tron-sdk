@@ -5,10 +5,10 @@ import (
 	"os"
 	"testing"
 
-	"github.com/fbsobreira/gotron-sdk/pkg/client"
-	"github.com/fbsobreira/gotron-sdk/pkg/proto/core"
 	"github.com/stretchr/testify/require"
 	"google.golang.org/grpc"
+	"gotron-sdk/pkg/client"
+	"gotron-sdk/pkg/proto/core"
 )
 
 var (

@@ -12,9 +12,9 @@ import (
 
 	eABI "github.com/ethereum/go-ethereum/accounts/abi"
 	eCommon "github.com/ethereum/go-ethereum/common"
-	"github.com/fbsobreira/gotron-sdk/pkg/address"
-	"github.com/fbsobreira/gotron-sdk/pkg/proto/core"
 	"golang.org/x/crypto/sha3"
+	"gotron-sdk/pkg/address"
+	"gotron-sdk/pkg/proto/core"
 )
 
 // Param list

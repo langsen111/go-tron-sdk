@@ -6,13 +6,13 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/fbsobreira/gotron-sdk/pkg/client"
-	"github.com/fbsobreira/gotron-sdk/pkg/common"
-	"github.com/fbsobreira/gotron-sdk/pkg/keystore"
-	"github.com/fbsobreira/gotron-sdk/pkg/ledger"
-	"github.com/fbsobreira/gotron-sdk/pkg/proto/api"
-	"github.com/fbsobreira/gotron-sdk/pkg/proto/core"
 	proto "google.golang.org/protobuf/proto"
+	"gotron-sdk/pkg/client"
+	"gotron-sdk/pkg/common"
+	"gotron-sdk/pkg/keystore"
+	"gotron-sdk/pkg/ledger"
+	"gotron-sdk/pkg/proto/api"
+	"gotron-sdk/pkg/proto/core"
 )
 
 var (

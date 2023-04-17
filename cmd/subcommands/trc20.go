@@ -5,13 +5,13 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/fbsobreira/gotron-sdk/pkg/address"
-	"github.com/fbsobreira/gotron-sdk/pkg/client/transaction"
-	"github.com/fbsobreira/gotron-sdk/pkg/common"
-	"github.com/fbsobreira/gotron-sdk/pkg/common/decimals"
-	"github.com/fbsobreira/gotron-sdk/pkg/keystore"
-	"github.com/fbsobreira/gotron-sdk/pkg/store"
 	"github.com/spf13/cobra"
+	"gotron-sdk/pkg/address"
+	"gotron-sdk/pkg/client/transaction"
+	"gotron-sdk/pkg/common"
+	"gotron-sdk/pkg/common/decimals"
+	"gotron-sdk/pkg/keystore"
+	"gotron-sdk/pkg/store"
 )
 
 func trc20Sub() []*cobra.Command {

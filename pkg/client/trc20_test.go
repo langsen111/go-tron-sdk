@@ -3,10 +3,10 @@ package client_test
 import (
 	"testing"
 
-	"github.com/fbsobreira/gotron-sdk/pkg/client"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"google.golang.org/grpc"
+	"gotron-sdk/pkg/client"
 )
 
 func TestTRC20_Balance(t *testing.T) {
