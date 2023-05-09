@@ -693,7 +693,7 @@ func accountSub() []*cobra.Command {
 	return []*cobra.Command{cmdBalance, cmdActivate, cmdSend, cmdAddress, cmdInfo, cmdWithdraw, cmdFreeze, cmdVote, cmdPermission, cmdSign, cmdVerify}
 }
 
-func init() {
+func init1() {
 	cmdAccount := &cobra.Command{
 		Use:   "account",
 		Short: "Account Actions",

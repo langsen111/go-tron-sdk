@@ -63,6 +63,47 @@ func (g *GrpcClient) TRC20Call(from, contractAddress, data string, constant bool
 
 }
 
+func (g *GrpcClient) TRCCall(from, contractAddress, data string, constant bool, value, feeLimit int64) (*api.TransactionExtention, error) {
+	var err error
+	fromDesc := address.HexToAddress("410000000000000000000000000000000000000000")
+	if len(from) > 0 {
+		fromDesc, err = address.Base58ToAddress(from)
+		if err != nil {
+			return nil, err
+		}
+	}
+	contractDesc, err := address.Base58ToAddress(contractAddress)
+	if err != nil {
+		return nil, err
+	}
+	dataBytes, err := common.FromHex(data)
+	if err != nil {
+		return nil, err
+	}
+	ct := &core.TriggerSmartContract{
+		OwnerAddress:    fromDesc.Bytes(),
+		ContractAddress: contractDesc.Bytes(),
+		Data:            dataBytes,
+	}
+	if value > 0 {
+		ct.CallValue = value
+	}
+	var result *api.TransactionExtention
+	if constant {
+		result, err = g.triggerConstantContract(ct)
+	} else {
+		result, err = g.triggerContract(ct, feeLimit)
+	}
+	if err != nil {
+		return nil, err
+	}
+	if result.Result.Code > 0 {
+		return result, fmt.Errorf(string(result.Result.Message))
+	}
+	return result, nil
+
+}
+
 // TRC20GetName get token name
 func (g *GrpcClient) TRC20GetName(contractAddress string) (string, error) {
 	result, err := g.TRC20Call("", contractAddress, trc20NameSignature, true, 0)
@@ -215,4 +256,9 @@ func (g *GrpcClient) TRC20Approve(from, to, contract string, amount *big.Int, fe
 	req := trc20ApproveMethodSignature + "0000000000000000000000000000000000000000000000000000000000000000"[len(addrB.Hex())-4:] + addrB.Hex()[4:]
 	req += common.Bytes2Hex(ab)
 	return g.TRC20Call(from, contract, req, false, feeLimit)
+}
+
+func (g *GrpcClient) BuildDataTx(from, data, contract string, value int64, feeLimit int64) (*api.TransactionExtention, error) {
+
+	return g.TRCCall(from, contract, data, false, value, feeLimit)
 }
