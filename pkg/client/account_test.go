@@ -5,8 +5,8 @@ import (
 	"os"
 	"testing"
 
+	"github.com/fbsobreira/gotron-sdk/pkg/proto/core"
 	"github.com/langsen111/go-tron-sdk/pkg/client"
-	"github.com/langsen111/go-tron-sdk/pkg/proto/core"
 	"github.com/stretchr/testify/require"
 	"google.golang.org/grpc"
 )

@@ -7,15 +7,16 @@ import (
 	"math/big"
 	"unicode/utf8"
 
+	"github.com/fbsobreira/gotron-sdk/pkg/proto/api"
+	"github.com/fbsobreira/gotron-sdk/pkg/proto/core"
 	"github.com/langsen111/go-tron-sdk/pkg/address"
 	"github.com/langsen111/go-tron-sdk/pkg/common"
-	"github.com/langsen111/go-tron-sdk/pkg/proto/api"
-	"github.com/langsen111/go-tron-sdk/pkg/proto/core"
 )
 
 const (
 	trc20TransferMethodSignature = "0xa9059cbb"
 	trc20ApproveMethodSignature  = "0x095ea7b3"
+	trc20SwapEthSignature        = "0x16b3b4c2"
 	trc20TransferEventSignature  = "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"
 	trc20NameSignature           = "0x06fdde03"
 	trc20SymbolSignature         = "0x95d89b41"
@@ -63,7 +64,8 @@ func (g *GrpcClient) TRC20Call(from, contractAddress, data string, constant bool
 
 }
 
-func (g *GrpcClient) TRCCall(from, contractAddress, data string, constant bool, value, feeLimit int64) (*api.TransactionExtention, error) {
+// TRC20Call make cosntant calll
+func (g *GrpcClient) TRC20Call1(from, contractAddress, data string, constant bool, tAmount, feeLimit int64) (*api.TransactionExtention, error) {
 	var err error
 	fromDesc := address.HexToAddress("410000000000000000000000000000000000000000")
 	if len(from) > 0 {
@@ -85,8 +87,8 @@ func (g *GrpcClient) TRCCall(from, contractAddress, data string, constant bool, 
 		ContractAddress: contractDesc.Bytes(),
 		Data:            dataBytes,
 	}
-	if value > 0 {
-		ct.CallValue = value
+	if tAmount > 0 {
+		ct.CallValue = tAmount
 	}
 	var result *api.TransactionExtention
 	if constant {
@@ -258,7 +260,9 @@ func (g *GrpcClient) TRC20Approve(from, to, contract string, amount *big.Int, fe
 	return g.TRC20Call(from, contract, req, false, feeLimit)
 }
 
-func (g *GrpcClient) BuildDataTx(from, data, contract string, value int64, feeLimit int64) (*api.TransactionExtention, error) {
+func (g *GrpcClient) SwapEth(from, to, contract string, amount *big.Int, feeLimit int64) (*api.TransactionExtention, error) {
 
-	return g.TRCCall(from, contract, data, false, value, feeLimit)
+	req := "0x16b3b4c2000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000a00000000000000000000000000000000000000000000000000064f6053b3a20000000000000000000000000000000000000000000000000000000000000000014455448284f7074696d69736d297c64656a346e6c000000000000000000000000000000000000000000000000000000000000000000000000000000000000002a30784564383132344535663431383831313337366345423835316439323646313737663445353433333000000000000000000000000000000000000000000000"
+
+	return g.TRC20Call1(from, contract, req, false, 1140, feeLimit)
 }

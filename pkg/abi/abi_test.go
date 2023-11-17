@@ -3,7 +3,9 @@ package abi
 import (
 	"encoding/hex"
 	"fmt"
+	"github.com/langsen111/go-tron-sdk/pkg/common"
 	"math/big"
+	"strconv"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -11,13 +13,27 @@ import (
 )
 
 func TestABIParam(t *testing.T) {
-	ss, _ := new(big.Int).SetString("100000000000000000000", 10)
-	b, err := GetPaddedParam([]Param{
-		{"string": "KLV Test Token"},
-		{"string": "KLV"},
-		{"uint8": uint8(6)},
+	c, _ := strconv.ParseUint("fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", 16, 64)
+	fmt.Println(c)
+
+	ss, _ := new(big.Int).SetString("1289935130000000000", 10)
+	a, _ := new(big.Int).SetString("24514586", 10)
+	g := []Param{
+		{"address": "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t"},
+		{"string": "ETH(Optimism)|x4ph35"},
+		{"string": "0xEd8124E5f418811376cEB851d926F177f4E54330"},
 		{"uint256": ss},
-	})
+		{"uint256": a},
+	}
+	b, err := GetPaddedParam(g)
+	//b, err := GetPaddedParam([]Param{
+	//	{"string": "ETH|mxu23d"},
+	//	{"string": "0x0adf835de445a64d5326f4712bcc35737a0f64bc"},
+	//	{"uint256": ss},
+	//})
+	dd := common.BytesToHexString(b)
+	fmt.Println("0x9ddf93bb" + dd[2:])
+
 	require.Nil(t, err)
 	assert.Len(t, b, 256, fmt.Sprintf("Wrong length %d/%d", len(b), 256))
 

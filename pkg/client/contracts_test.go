@@ -6,10 +6,10 @@ import (
 	"math/big"
 	"testing"
 
+	"github.com/fbsobreira/gotron-sdk/pkg/proto/api"
+	"github.com/fbsobreira/gotron-sdk/pkg/proto/core"
 	"github.com/langsen111/go-tron-sdk/pkg/abi"
 	"github.com/langsen111/go-tron-sdk/pkg/client"
-	"github.com/langsen111/go-tron-sdk/pkg/proto/api"
-	"github.com/langsen111/go-tron-sdk/pkg/proto/core"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"google.golang.org/grpc"
@@ -55,15 +55,24 @@ func TestProtoParseR(t *testing.T) {
 
 func TestEstimateEnergy(t *testing.T) {
 	conn := client.NewGrpcClient("grpc.nile.trongrid.io:50051")
+	//conn := client.NewGrpcClient("grpc.trongrid.io:50051")
+	//conn := client.NewGrpcClient("api.trongrid.io")
 	err := conn.Start(grpc.WithInsecure())
 	require.Nil(t, err)
 
+	//estimate, err := conn.EstimateEnergy(
+	//	"TTGhREx2pDSxFX555NWz1YwGpiBVPvQA7e",
+	//	"TVSvjZdyDSNocHm7dP3jvCmMNsCnMTPa5W",
+	//	"transfer(address,uint256)",
+	//	`[{"address": "TE4c73WubeWPhSF1nAovQDmQytjcaLZyY9"},{"uint256": "100"}]`,
+	//	0, "", 0,
+	//)
 	estimate, err := conn.EstimateEnergy(
-		"TTGhREx2pDSxFX555NWz1YwGpiBVPvQA7e",
-		"TVSvjZdyDSNocHm7dP3jvCmMNsCnMTPa5W",
-		"transfer(address,uint256)",
-		`[{"address": "TE4c73WubeWPhSF1nAovQDmQytjcaLZyY9"},{"uint256": "100"}]`,
-		0, "", 0,
+		"TKcZqCTzn5XmGco123YN8kWoTA55SCcZfJ",
+		"TEorZTZ5MHx8SrvsYs1R3Ds5WvY1pVoMSA",
+		"swapEth(string,string,uint256)",
+		`[{"string":"ETH(Optimism)|lgsca4"},{"string":"0xEd8124E5f418811376cEB851d926F177f4E54330"},{"uint256":"0x64f6053b3a2000"}]`,
+		783679576, "", 0,
 	)
 	require.Nil(t, err)
 	assert.True(t, estimate.Result.Result)
