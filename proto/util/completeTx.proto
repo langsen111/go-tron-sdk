@@ -6,13 +6,13 @@ import "core/asset_issue_contract.proto";
 
 package protocol;
 
-option go_package = "github.com/langsen111/go-tron-sdk/pkg/proto/util";
+option go_package = "github.com/fbsobreira/gotron-sdk/pkg/proto/util";
 
 message ProtoCompleteTransaction {
-    uint64 BlockNumber = 1;
-    uint64 BlockTime = 2;
-    TransactionExtention Tx = 3;
-    TransactionInfo Info = 4;
-    Exchange ExchangeInfo = 5;
-    AssetIssueContract AssetInfo  = 6;
+  uint64 BlockNumber = 1;
+  uint64 BlockTime = 2;
+  TransactionExtention Tx = 3;
+  TransactionInfo Info = 4;
+  Exchange ExchangeInfo = 5;
+  AssetIssueContract AssetInfo  = 6;
 }

@@ -8,11 +8,11 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/fbsobreira/gotron-sdk/pkg/proto/core"
 	"github.com/langsen111/go-tron-sdk/pkg/address"
 	"github.com/langsen111/go-tron-sdk/pkg/client/transaction"
 	"github.com/langsen111/go-tron-sdk/pkg/common"
 	"github.com/langsen111/go-tron-sdk/pkg/keystore"
-	"github.com/langsen111/go-tron-sdk/pkg/proto/core"
 	"github.com/langsen111/go-tron-sdk/pkg/store"
 	"github.com/spf13/cobra"
 )

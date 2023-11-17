@@ -7,9 +7,9 @@ import (
 	"time"
 
 	"github.com/fatih/structs"
+	"github.com/fbsobreira/gotron-sdk/pkg/proto/core"
 	"github.com/langsen111/go-tron-sdk/pkg/address"
 	"github.com/langsen111/go-tron-sdk/pkg/common"
-	"github.com/langsen111/go-tron-sdk/pkg/proto/core"
 	"github.com/spf13/cobra"
 	"google.golang.org/protobuf/reflect/protoreflect"
 )

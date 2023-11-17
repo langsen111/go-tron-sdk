@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/langsen111/go-tron-sdk/pkg/proto/api"
+	"github.com/fbsobreira/gotron-sdk/pkg/proto/api"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/metadata"
 )
@@ -24,7 +24,7 @@ type GrpcClient struct {
 func NewGrpcClient(address string) *GrpcClient {
 	client := &GrpcClient{
 		Address:     address,
-		grpcTimeout: 5 * time.Second,
+		grpcTimeout: 50 * time.Second,
 	}
 	return client
 }
